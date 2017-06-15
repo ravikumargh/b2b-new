@@ -10,6 +10,8 @@ namespace b2b.api.Controllers
     public class ValuesController : ApiController
     {
         // GET api/values
+        [Authorize(Roles = "Manager")]
+        [Authorize(Roles = "Supervisor")]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
